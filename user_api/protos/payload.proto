@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message SimpleSupplyPayload{
+    enum Action {
+        SYNCHRONIZE_DATA = 0;
+        CREATE_USER = 1;
+    }
+    Action action = 1;
+    SynchronizeData synchronize_data =2;
+    CreateUser create_user = 3;
+}
+
+
+message SynchronizeData {
+    string data = 1;
+}
+message CreateUser {
+    string username = 1;
+    string email = 2;
+}
